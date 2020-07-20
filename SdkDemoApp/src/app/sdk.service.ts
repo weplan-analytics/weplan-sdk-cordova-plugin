@@ -8,8 +8,8 @@ export class SdkService extends IonicNativePlugin {
     static pluginRef = 'WeplanSdk';
     static platforms = ['Android'];
 
-    enableSdk(): Promise<any> { 
-      return cordova(this, 'enableSdk', {}, []);
+    enableSdk(clientId: string, clientSecret: string): Promise<any> {
+      return cordova(this, 'enableSdk', {}, [clientId, clientSecret]);
     }
 
     disableSdk(): Promise<any> { 

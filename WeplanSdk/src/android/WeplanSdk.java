@@ -15,7 +15,7 @@ public class WeplanSdk extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("enableSdk")) {
-            this.enableSdk(callbackContext);
+            this.enableSdk(args.getString(0), args.getString(1), callbackContext);
             return true;
         }
         else if (action.equals("disableSdk")) {
@@ -25,11 +25,10 @@ public class WeplanSdk extends CordovaPlugin {
         return false;
     }
 
-    // TODO change keys
-    private void enableSdk(CallbackContext callbackContext){
+    private void enableSdk(String clientId, String clientSecret, CallbackContext callbackContext) {
         com.cumberland.weplansdk.WeplanSdk.INSTANCE.withContext(this.cordova.getActivity().getApplicationContext())
-                .withClientId("mLjamj5RzzNeHRMY9jTpstsKduTGiRrY69Wi55yDqwNBHYsPNwGKj3w6HedG1l1NvkuexTNPvT0j52thhtqnU1")
-                .withClientSecret("Q0IRLVPdunhApbZGqSQBrvmNbCoOucaY7sRuwPuoBHnhFhrvbJoMfWOvqlfBKTCDWtOSGNuurcQVIBWmZBTnzF")
+                .withClientId(clientId)
+                .withClientSecret(clientSecret)
                 .enable();
     }
 

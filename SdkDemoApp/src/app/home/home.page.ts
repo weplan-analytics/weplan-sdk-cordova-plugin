@@ -21,7 +21,10 @@ export class HomePage {
   }
 
   enableSdk() {
-    this.sdk.enableSdk()
+    var clientId = "mLjamj5RzzNeHRMY9jTpstsKduTGiRrY69Wi55yDqwNBHYsPNwGKj3w6HedG1l1NvkuexTNPvT0j52thhtqnU1";
+    var clientSecret = "Q0IRLVPdunhApbZGqSQBrvmNbCoOucaY7sRuwPuoBHnhFhrvbJoMfWOvqlfBKTCDWtOSGNuurcQVIBWmZBTnzF";
+    console.log('Yo bro')
+    this.sdk.enableSdk(clientId, clientSecret)
   }
 
   disableSdk() {
