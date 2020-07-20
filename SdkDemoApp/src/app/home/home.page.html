@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      SDK demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <p>
+    <button ion-button color="primary" full (click)="requestPermission()">Request permissions</button>
+  </p>
+  <p>
+    <button ion-button color="primary" full (click)="enableSdk()">Enable SDK</button>
+  </p>
+  <p>
+    <button ion-button color="primary" full (click)="disableSdk()">Disable SDK</button>
+  </p>
+
+</ion-content>

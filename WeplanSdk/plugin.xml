@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-weplansdk" version="0.1.0">
+   <name>WeplanSdk</name>
+   <js-module name="WeplanSdk" src="www/WeplanSdk.js">
+      <clobbers target="WeplanSdk" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="WeplanSdk">
+            <param name="android-package" value="cordova.plugin.weplansdk.WeplanSdk" />
+         </feature>
+      </config-file>
+      <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/WeplanSdk.java" target-dir="src/cordova/plugin/weplansdk/WeplanSdk" />
+   </platform>
+</plugin>

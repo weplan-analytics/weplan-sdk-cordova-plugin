@@ -1,0 +1,18 @@
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    maven {
+        url 'https://maven.weplananalytics.com/artifactory/private'
+        credentials {
+            username = "${artifactory_username}"
+            password = "${artifactory_password}"
+        }
+    }
+    maven { url 'https://maven.weplan-app.com/artifactory/public' }
+}
+
+dependencies {
+    def weplanSdkVersion = '2.2.2'
+    implementation "com.cumberland.weplansdk:extended-pre:${weplanSdkVersion}.dev"
+}
