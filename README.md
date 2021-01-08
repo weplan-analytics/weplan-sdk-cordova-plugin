@@ -1,12 +1,16 @@
 # WeplanSDK
 
-A cordova plugin for using Weplan SDK.
-
-***Only supported on Android currently.
+A cordova plugin for using Weplan SDK **on Android platform**.
 
 ### Usage with Apache/Cordova
 
-Usage after onDeviceReady, call the plugin as follow:
+Add plugin to cordova project
+
+```
+cordova plugin add https://github.com/weplan-analytics/weplan-sdk-cordova-plugin.git
+```
+
+Use after deviceready event, calling the plugin as follow:
 
 ```
     // Enable SDK
@@ -36,7 +40,13 @@ Usage after onDeviceReady, call the plugin as follow:
 
 ### Usage with Ionic
 
-We will wrap cordova plugin creating a new provider/service:
+Add cordova plugin
+
+´´´
+ionic cordova plugin add https://github.com/weplan-analytics/weplan-sdk-cordova-plugin.git
+´´´
+
+Wrap cordova plugin creating a new provider/service:
 
 ```
 ionic g service weplanSdk
@@ -51,7 +61,7 @@ Replace the content of the generated file (**weplan-sdk.service.ts**) with the f
     import { cordova, IonicNativePlugin } from  '@ionic-native/core';
     
     @Injectable()
-    export  class  SdkService  extends  IonicNativePlugin {
+    export  class  WeplanSdkService  extends  IonicNativePlugin {
 	    static  pluginName = 'weplansdk';
 	    static  plugin = 'cordova-plugin-weplansdk';
 	    static  pluginRef = 'WeplanSdk';
@@ -72,10 +82,10 @@ Replace the content of the generated file (**weplan-sdk.service.ts**) with the f
 Now you can use the service anywhere on the project
 
 ```
-    import { SdkService } from  '../sdk.service';
+    import { WeplanSdkService } from  '../weplan-sdk.service';
     
-    constructor(private sdk: SdkService) { 
-        this.sdk.enableSdk(clientId, clientSecret, true)
-        //this.sdk.disable()
+    constructor(private weplanSdk: WeplanSdkService) { 
+        weplanSdk.enableSdk(clientId, clientSecret, true)
+        //weplanSdk.disable()
     }
 ```
