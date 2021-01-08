@@ -1,6 +1,6 @@
-# WeplanSDK
+# Weplan SDK Ionic/Cordova Plugin
 
-A cordova plugin for using Weplan SDK **on Android platform**.
+A cordova plugin to enable/disable Weplan SDK **on Android platform**.
 
 ### Usage with Apache/Cordova
 
@@ -20,9 +20,9 @@ Use after deviceready event, calling the plugin as follow:
         "WeplanSdk",
         "enableSdk",
         [
-            "fGthbeJ9tru8CDlQUqhKmLXDxwXWzQLxfSjwEeoJ1iWTS9dLNRfIF295LEFwV3dGx53FhY2Oj9m1SDWDoeDhcA", // ClientId
-            "Youbgyj54SbfMjMcFSCWjAzSDKk8GzJc2VP7DTqWR8LhuqNhb29rOfDOb9GNS0FUhMFtBiKlNqmXVCjMjk3U8u", // ClientSecret
-            true    // Enable on Startup
+            "YOUR_CLIENT_ID",       // Update with your ClientId
+            "YOUR_CLIENT_SECRET",   // Update with your ClientSecret
+            true                    // This will enable sdk on app updates to those devices with location permission previously granted
         ]
     );
 
@@ -85,7 +85,11 @@ Now you can use the service anywhere on the project
     import { WeplanSdkService } from  '../weplan-sdk.service';
     
     constructor(private weplanSdk: WeplanSdkService) { 
-        weplanSdk.enableSdk(clientId, clientSecret, true)
+        weplanSdk.enableSdk(
+            "YOUR_CLIENT_ID",       // Update with your ClientId
+            "YOUR_CLIENT_SECRET",   // Update with your ClientSecret
+            true                    // This will enable sdk on app updates to those devices with location permission previously granted
+        )
         //weplanSdk.disable()
     }
 ```
