@@ -1,17 +1,11 @@
-
-  
-
 # WeplanSDK
 
 A cordova plugin for using weplan's SDK.
 
 ***Only supported on Android currently.
 
-  
 
 ### Usage with Ionic
-
-  
 
 Wrap plugin with a provider/service:
 
@@ -27,7 +21,6 @@ Replace the content of the generated file with the following plugin wrap:
     import { cordova, IonicNativePlugin } from  '@ionic-native/core';
     
       
-    
     @Injectable()
     export  class  SdkService  extends  IonicNativePlugin {
 	    static  pluginName = 'weplansdk';
@@ -35,8 +28,8 @@ Replace the content of the generated file with the following plugin wrap:
 	    static  pluginRef = 'WeplanSdk';
 	    static  platforms = ['Android'];
 	      
-	    enableSdk(clientId: string, clientSecret: string): Promise<any> {
-		    return  cordova(this, 'enableSdk', {}, [clientId, clientSecret]);
+	    enableSdk(clientId: string, clientSecret: string, startOnUpdate: boolean): Promise<any> {
+		    return  cordova(this, 'enableSdk', {}, [clientId, clientSecret, startOnUpdate]);
 	    }
 	    
 	    disableSdk(): Promise<any> {
@@ -54,7 +47,5 @@ Now you can use the service anywhere on the project after **including it in the 
     ...
     
     // Usage example
-    this.sdk.enableSdk(clientId, clientSecret)
+    this.sdk.enableSdk(clientId, clientSecret, true)
     this.sdk.disable()
-
-**Prerequisite:** ACCESS_FINE_LOCATION must be granted.

@@ -1,0 +1,14 @@
+repositories {
+  maven { url 'https://maven.weplan-app.com/artifactory/public' }
+}
+
+android {
+  dependenciesInfo {
+    includeInApk = false
+    includeInBundle = false
+  }
+}
+
+dependencies {
+  implementation 'com.cumberland.utils:sdk-init:+'
+}

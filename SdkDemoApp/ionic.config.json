@@ -1,7 +1,0 @@
-{
-  "name": "SdkDemoApp",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
