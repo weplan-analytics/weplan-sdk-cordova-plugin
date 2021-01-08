@@ -42,9 +42,9 @@ Use after deviceready event, calling the plugin as follow:
 
 Add cordova plugin
 
-´´´
+```
 ionic cordova plugin add https://github.com/weplan-analytics/weplan-sdk-cordova-plugin.git
-´´´
+```
 
 Wrap cordova plugin creating a new provider/service:
 
