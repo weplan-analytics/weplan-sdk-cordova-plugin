@@ -22,8 +22,8 @@ public class WeplanSdk extends CordovaPlugin {
         return false;
     }
 
-    private void enableSdk(String clientId, String clientSecret, CallbackContext callbackContext) {
-        com.cumberland.utils.init.Weplan.Sdk.enable(this.cordova.getActivity(), clientId, clientSecret, startOnUpdate)
+    private void enableSdk(String clientId, String clientSecret, boolean startOnUpdate, CallbackContext callbackContext) {
+        com.cumberland.utils.init.Weplan.Sdk.enable(this.cordova.getActivity(), clientId, clientSecret, startOnUpdate);
     }
 
     private void disableSdk(CallbackContext callbackContext){
