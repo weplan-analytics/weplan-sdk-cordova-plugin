@@ -12,7 +12,7 @@ android {
 dependencies {
   implementation 'com.google.android.gms:play-services-analytics:16.0.0'
   implementation 'com.google.android.gms:play-services-location:16.0.0'
-  implementation ('com.cumberland.utils:sdk-init:2.7.10') {
+  implementation ('com.cumberland.utils:sdk-init:+') {
     exclude group: 'com.google.android.gms'
     exclude group: 'androidx.annotation'
   }
